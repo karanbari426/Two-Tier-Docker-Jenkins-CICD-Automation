@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Hospital Staff</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 40px;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            max-width: 500px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Edit Hospital Staff</h1>
+
+<form method="POST">
+
+    <label>Name</label>
+
+    <input
+        type="text"
+        name="name"
+        value="{{ staff.name }}"
+        required
+    >
+
+    <label>Role</label>
+
+    <input
+        type="text"
+        name="role"
+        value="{{ staff.role }}"
+        required
+    >
+
+    <label>Department</label>
+
+    <input
+        type="text"
+        name="department"
+        value="{{ staff.department }}"
+        required
+    >
+
+    <label>Email</label>
+
+    <input
+        type="email"
+        name="email"
+        value="{{ staff.email }}"
+        required
+    >
+
+    <label>Phone</label>
+
+    <input
+        type="text"
+        name="phone"
+        value="{{ staff.phone }}"
+        required
+    >
+
+    <button type="submit">
+        Update Staff
+    </button>
+
+</form>
+
+<br>
+
+<a href="/">← Back</a>
+
+</body>
+
+</html>

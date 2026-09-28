@@ -1,0 +1,54 @@
+services:
+
+  app:
+    build: .
+    container_name: hospital-app
+    ports:
+      - "5000:5000"
+
+    environment:
+      DB_HOST: db
+      DB_USER: hospital_user
+      DB_PASSWORD: hospital_pass
+      DB_NAME: hospital_db
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: hospital-db
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: hospital_db
+      MYSQL_USER: hospital_user
+      MYSQL_PASSWORD: hospital_pass
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "hospital_user",
+          "-phospital_pass"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
