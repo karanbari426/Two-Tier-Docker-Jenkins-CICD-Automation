@@ -454,17 +454,17 @@ This is a realistic fresher-level project that builds a strong foundation for De
 
 ## Screenshots
 
-This repository does not currently contain screenshot files. Screenshots can be added later as the project documentation grows.
+The `Image/` folder contains screenshots of the deployed application and CI/CD setup:
 
-Recommended screenshots to include:
-
-1. Hospital Staff Management web page
-2. Jenkins pipeline success output
-3. Jenkins console logs
-4. GitHub repository view
-5. GitHub webhook configuration
-6. AWS EC2 instance
-7. Running Docker containers
+1. [Docker images on EC2](Image/01-docker-images-on-ec2.png)
+2. [AWS EC2 instance details](Image/02-aws-ec2-instance-details.png)
+3. [Jenkins pipeline job status](Image/03-jenkins-pipeline-job-status.png)
+4. [Jenkins build details](Image/04-jenkins-build-details.png)
+5. [Jenkins pipeline stages](Image/05-jenkins-pipeline-stage-view.png)
+6. [Successful GitHub webhook delivery](Image/06-github-webhook-delivery-success.png)
+7. [Hospital staff list](Image/07-hospital-staff-list.png)
+8. [Add staff form](Image/08-add-hospital-staff-form.png)
+9. [Jenkins dashboard](Image/09-jenkins-dashboard.png)
 
 ---
 
